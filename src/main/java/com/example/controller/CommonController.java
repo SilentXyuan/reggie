@@ -19,7 +19,7 @@ import java.util.UUID;
 /**
  * 文件上传下载
  *
- * @Name CommonComtroller
+ * @Name CommonController
  * @Author 舟鸿
  * @Date 2022-11-18 10:01
  */

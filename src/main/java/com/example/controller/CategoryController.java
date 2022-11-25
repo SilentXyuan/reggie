@@ -5,9 +5,14 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.model.entity.Category;
 import com.example.model.vo.Result;
 import com.example.service.intf.CategoryService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.annotations.ApiIgnore;
 
 import java.util.List;
 
@@ -20,6 +25,7 @@ import java.util.List;
  */
 
 @Slf4j
+@Api(tags = "接口")
 @RestController
 @RequestMapping("/category")
 public class CategoryController {
@@ -31,8 +37,12 @@ public class CategoryController {
      * @param category
      * @return
      */
+    @ApiOperation("新增分类")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "name", value = "姓名", required = true, dataTypeClass = String.class)
+    })
     @PostMapping
-    public Result<String> save(@RequestBody Category category){
+    public Result<String> save(@RequestBody @ApiIgnore Category category){
         log.info("category:{}",category);
         categoryService.save(category);
         return Result.success("新增分类成功");

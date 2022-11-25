@@ -17,6 +17,7 @@
         <java.version>17</java.version>
         <spring-boot-maven-plugin.version>2.7.5</spring-boot-maven-plugin.version>
         <mybatis-plus-boot-starter.version>3.5.2</mybatis-plus-boot-starter.version>
+
         <druid.version>1.2.14</druid.version>
         <druid-spring-boot-starter.version>1.2.14</druid-spring-boot-starter.version>
         <fastjson.version>2.0.18</fastjson.version>
@@ -29,11 +30,11 @@
             <version>${mybatis-plus-boot-starter.version}</version>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>com.alibaba</groupId>-->
-<!--            <artifactId>druid</artifactId>-->
-<!--            <version>${druid.version}</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>3.0.0</version>
+        </dependency>
 
         <dependency>
             <groupId>com.alibaba</groupId>
